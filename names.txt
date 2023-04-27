@@ -1,0 +1,93 @@
+maintaining the history of the project and storing our code 
+
+
+list command(ls)
+it lists everything in the folder/file
+
+make directory(mkdir)
+make file/folder,etc.
+
+change directory(cd)
+changes the folder/file you are working on 
+[basically like opening a folder/file]
+
+initializing an empty git repository (git init)
+the repository is like a project folder 
+
+
+(-a) tag 
+this basically shows all the hidden files
+
+{any file that starts with a .[ex:- .root] is hidden in mac and linux OS}
+
+to create a new file another Linux command is called touch 
+[ex:- touch names.txt]
+
+you can enter text in the .txt file by using cat command {kunal uses vim but I am doing the whole hands-on practise on Linux terminal so i send the same command for you guys to look for} 
+[ex:- cat > names.txt]
+
+(git status) it basically tells us everything that has happened with our folder every change, modification, or deleted files {it has the history stored remember? }
+
+now not everything is saved, the files are mostly untracked but we can do it by using the command [git add .] this command will basically save (dot means evrything in the current project directory that is currently not having its history or that is untracked are put together on the stage so that they can be saved or we can say tracked now)
+you can individually add the names of files if you don't want everything in folder to get updated for example (git add names.txt)
+and then check status by using (git status) command and this will allow us to maintain the changes, modification, etc... and save them 
+
+now when we change,modify,add,remove something we basically comment it using (git commit -m"names.txt file added")this adds a comment to the specific action 
+{doing this will clarify how we did the change}
+
+ (cat names.txt) command displays all the contents of the file 
+ 
+ if you don't want any commits to be saved you can remove them by doing(git restore --stagged names.txt) this will remove the file from saved version and put it back on the unsaved part 
+ 
+now to see all the history you need (git logs) command here you can see all the history 
+
+you can not remove one commit from between, 
+commits are built on each other like a tree so if you want to remove one commit you check the logs and see the commit you need to remove and select the commit below it and copy its hash -ID(whatever commit I copy the commits above it will get removed) use this command (git reset commit hash-ID) and then check the logs/status you can see now the other commits you wished to remove are in the untracked or unsaved area
+ 
+now if you have changes which you don't want to commit but neither can discard them so you keep them in a backstage area by using (git stash) command
+
+now if you want the files in the backstage to come at the staging area you wil use (git stash pop) command 
+
+now{"now if you have changes which you don't want to commit but neither can discard them so you keep them in a backstage area by using (git stash) command"} these changes were on thebackstage but now you dont want them so in order to clean your backstage you do (git stash clear) command 
+after doing this those changes will be gone now they can't come back 
+
+
+starting with GitHub 
+
+you can create a new repository and then link it to your project folder by using this command(git remote add origin link-of-your-repository)
+
+now if we do(git remote -v) it will show us all the repositories that are attached to our folder 
+
+now to save your folders work on your repository you can do (git push origin master) command and you will be able to see all the files in the repository 
+
+now to understand branches go on 28:57 in the video
+
+working with existing projects
+you cant directly make changes to anyone's projects you need to fork it 
+doing this will not reflect in the main project until & unless the creator of the project gives approval for the project via the pul request which is explained later
+
+we need to fork the project of the organisation into our personal acc and then copy the link from "download code button"
+
+now in your desktop you can clone this repository by (git clone link)command 
+this will basically download that folder/repository  
+
+now you know that the origin you are in is your own acc 
+and from where you have forked this (the community repository) is known as upstream url 
+
+and you can add another url in the terminal by doing(git remote add upstream link) 
+"origin" is your own/personal and "upstream" is the communities 
+
+creating a new branch(git branch branch-name)
+checkout means shifting the focus from main to new branch 
+
+if you have some code in your new branch of the clone repository and you want to transfer or we may say publish to the original communities main branch then you pull request you can see this easily explained on 41:00 - 45:30
+
+command:-
+git push origin your-branch-name
+
+(you can't do "git push upstream your-own-branch-name" you will not be able to push it coz you don't have access to it) 
+
+ONE BRANCH = ONE PULL REQUEST 
+
+follow this its easier to merge and don't commit directly on main branch 
+make a seperate branch every single time!
